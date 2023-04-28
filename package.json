@@ -1,0 +1,26 @@
+{
+  "name": "node-complete-tutorial",
+  "version": "1.0.0",
+  "description": "a complete node tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omdglobalia/Node_Tutorial.git"
+  },
+  "keywords": [
+    "om",
+    "davra"
+  ],
+  "author": "om davra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omdglobalia/Node_Tutorial/issues"
+  },
+  "homepage": "https://github.com/omdglobalia/Node_Tutorial#readme",
+  "dependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
