@@ -1,9 +1,6 @@
-const fs = require('fs'); // As requirement we import module according us! Like - [ const fs = require('fs').writeFile ]
+const http = require('http');
 
-fs.writeFile('mynewfile.txt', "helloo", function (err) {
-    if (err) {
-        console.log('File Not Found!');
-    } else {
-        console.log('File created!');
-    }
-});
+http.createServer((req, res) => {
+    res.write("Hello I'm om davra")
+    res.end();
+}).listen(8000);
