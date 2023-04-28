@@ -1,21 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const dirPath = path.join(__dirname, 'crud');
-const filePath = `${dirPath}/test.txt`;
+let a = 10;
+let b = 0;
 
-// CREATE FILE
-// fs.writeFileSync(filePath, `This is a simple text file`)
+let waitingData = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(20)
+    }, [2000])
+})
 
-// READ FILE
-// fs.readFile(filePath, 'utf8', (err, item) => {
-//     console.log(item)
-// })
-
-// UPDATE FILE
-// fs.appendFile(filePath, " and file name is hello.txt", (err) => !err && console.log("file is updated"))
-
-// RENAME FILE
-// fs.rename(filePath, `${dirPath}/test.txt`, (err) => !err && console.log("file name is updated"))
-
-// DELETE FILE
-// fs.unlinkSync(filePath)
+waitingData.then((res) => {
+    console.log(a + res)
+})
