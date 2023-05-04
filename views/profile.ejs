@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Home page</title>
+    <title>Profile page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -41,13 +41,29 @@
 </head>
 
 <body>
+    <!-- Load Common Header File -->
+    <%- include('common/header') %>
     <!-- Container (About Section) -->
     <div class="w3-content w3-container w3-padding-64" id="about">
-        <h3 class="w3-center">Home Page</h3>
-        <p class="w3-center">Hey, I'm Om Davra!</p>
-        <div class="w3-center">
-            <a href="/profile">Are you seen my profile? if not press here</a>
+        <h3 class="w3-center">Dynamic Profile Page</h3>
+        <p class="w3-center">Hey, It's me! I'm <%= user.name %> here</p>
+        <div class="its-me">
+            <img src="<%= user.img.src %>" alt="<%= user.img.alt %>" width="300">
         </div>
+        <div class="w3-center">
+            <a href="<%= user.redirect %>">Do you want to know more about me? Click here</a>
+        </div>
+        <p class="w3-center">Skills:</p>
+        <!-- <% user.skills.forEach((item)=> { %>
+            <p class="w3-center">
+                <%= item %>
+            </p>
+            <% }) %> -->
+        <p class="w3-center">
+            <% for(i=0; user.skills.length> i; i++){ %>
+                <%= user.skills[i] %><%= i !==user.skills.length - 1 ? "," : "" %>
+            <% }%>
+        </p>
     </div>
 </body>
 
